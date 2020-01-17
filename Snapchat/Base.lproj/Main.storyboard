@@ -284,10 +284,10 @@
             </objects>
             <point key="canvasLocation" x="3986.9565217391309" y="84.375"/>
         </scene>
-        <!--View Controller-->
+        <!--Foto View Controller-->
         <scene sceneID="5MV-ng-tSg">
             <objects>
-                <viewController id="yKS-Ab-W47" sceneMemberID="viewController">
+                <viewController id="yKS-Ab-W47" customClass="FotoViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TFY-zK-HSl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,8 +332,16 @@
                         <viewLayoutGuide key="safeArea" id="DtH-Yl-was"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zni-0R-2fV">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="eCC-jA-frl"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="eCC-jA-frl">
+                            <connections>
+                                <action selector="selecionarFoto:" destination="yKS-Ab-W47" id="hXu-Vr-GYp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descricao" destination="aqI-4V-bSV" id="Qh2-Ly-wN7"/>
+                        <outlet property="imagem" destination="hMZ-WL-EdS" id="nZU-Ar-EFq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sQ-d7-GnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -381,6 +389,6 @@
         <image name="padrao" width="500" height="446"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jqh-jg-EZD"/>
+        <segue reference="DhU-zA-e72"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,23 +8,30 @@
 
 import UIKit
 
-class FotoViewController: UIViewController {
+class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var imagem: UIImageView!
+    @IBOutlet weak var descricao: UITextField!
+    
+    @IBAction func selecionarFoto(_ sender: Any) {
+        
+        imagePicker.sourceType = .savedPhotosAlbum
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    var imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        imagePicker.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let imagemRecuperada = info[UIImagePickerController.InfoKey.originalImage ] as! UIImage
+        imagem.image = imagemRecuperada
+        imagePicker.dismiss(animated: true, completion: nil)
     }
-    */
 
 }
