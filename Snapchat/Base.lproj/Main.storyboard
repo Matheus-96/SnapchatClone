@@ -251,7 +251,7 @@
         <!--Snaps-->
         <scene sceneID="86m-ZY-62y">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="JW9-4m-Lca" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="JW9-4m-Lca" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VsS-Rh-d70">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,7 +268,11 @@
                         <viewLayoutGuide key="safeArea" id="RmM-qY-84Z"/>
                     </view>
                     <navigationItem key="navigationItem" title="Snaps" id="kVt-Le-u7e">
-                        <barButtonItem key="leftBarButtonItem" title="Sair" id="8Mv-2Z-1kK"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sair" id="8Mv-2Z-1kK">
+                            <connections>
+                                <action selector="sair:" destination="JW9-4m-Lca" id="XC8-cL-xXQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kka-ht-qh4">
                             <connections>
                                 <segue destination="yKS-Ab-W47" kind="show" id="hBB-qi-hcF"/>
