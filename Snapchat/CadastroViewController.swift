@@ -14,7 +14,7 @@ class CadastroViewController: UIViewController {
     @IBOutlet weak var email:UITextField!
     @IBOutlet weak var senha: UITextField!
     @IBOutlet weak var senhaConfirmacao: UITextField!
-
+    
     
     @IBAction func criarConta(_ sender: Any) {
         
@@ -31,9 +31,37 @@ class CadastroViewController: UIViewController {
                         autenticacao.createUser(withEmail: emailR, password: senhaR) { (usuario, erro) in
                             
                             if erro == nil {
-                                print("Sucesso ao cadastrar usuário")
+                                if usuario == nil {
+                                    self.exibeMensagem(titulo: "Erro ao autenticar", mensagem: "Problema ao realizar autenticacao, tente novamente.")
+                                } else {
+                                    //redireciona usuario para tela principal
+                                    self.performSegue(withIdentifier: "cadastroLoginSegue", sender: nil)
+                                }
                             } else {
-                                print("Erro ao cadastrar usuário")
+                                /*
+                                 ERROR_INVALID_EMAIL
+                                 ERROR_WEAK_PASSWORD
+                                 ERROR_EMAIL_ALREADY_IN_USE
+                                 */
+                                let erroR = erro! as NSError
+                                if let codigoErro = erroR.userInfo["FIRAuthErrorUserInfoNameKey"] {
+                                    let erroTexto = codigoErro as! String
+                                    var mensagemErro = ""
+                                    switch erroTexto {
+                                    case "ERROR_INVALID_EMAIL":
+                                        mensagemErro = "E-mail inválido, digite um e-mail válido!"
+                                        break
+                                    case "ERROR_WEAK_PASSWORD":
+                                        mensagemErro = "Senha precisa ter no mínimo 6 caracteres, com letras e números"
+                                        break
+                                    case "ERROR_EMAIL_ALREADY_IN_USE":
+                                        mensagemErro = "Esse e-mail já está sendo utilizado, crie sua conta com outro e-mail"
+                                        break
+                                    default:
+                                        mensagemErro = "Dados digitados estão incorretos"
+                                    }
+                                    self.exibeMensagem(titulo: "Dados inválidos", mensagem: mensagemErro)
+                                }
                             }
                             
                         } /*Fim da validacao do Firebase*/
@@ -49,7 +77,7 @@ class CadastroViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -66,15 +94,15 @@ class CadastroViewController: UIViewController {
         
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
