@@ -39,12 +39,10 @@ class UsuariosTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return self.usuarios.count
     }
 
@@ -55,8 +53,30 @@ class UsuariosTableViewController: UITableViewController {
         //configura celula
         let usuario = self.usuarios[indexPath.row]
         celula.textLabel?.text = usuario.nome
+        celula.detailTextLabel?.text = usuario.email
 
         return celula
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let usuarioSelecionado = self.usuarios[ indexPath.row ]
+        let idUsuarioSelecionado = usuarioSelecionado.uid
+        
+        //Recupera referencia do banco de dados
+        
+        let database = Database.database().reference()
+        let usuarios = database.child("usuarios")
+        let snaps = usuarios.child(idUsuarioSelecionado).child("snaps")
+        
+        let snap = [
+            "de":"test@gmail.com",
+            "nome":"Testand",
+            "descricao":"Imagem aleatoria",
+            "urlImagem":"www.firebase...",
+            "idImagem":"1343cdf32"
+        ]
+        snaps.childByAutoId().setValue(snap)
     }
     
 
