@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AC1248923D61ABD002C5E73 /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1248823D61ABD002C5E73 /* Alerta.swift */; };
+		0AC1248B23D62940002C5E73 /* UsuariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1248A23D6293F002C5E73 /* UsuariosTableViewController.swift */; };
+		0AC1248D23D62AD7002C5E73 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1248C23D62AD7002C5E73 /* Usuario.swift */; };
 		0AE437B423D1E815009FD5D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE437B323D1E815009FD5D5 /* AppDelegate.swift */; };
 		0AE437B623D1E815009FD5D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE437B523D1E815009FD5D5 /* SceneDelegate.swift */; };
 		0AE437B823D1E815009FD5D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE437B723D1E815009FD5D5 /* ViewController.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AC1248823D61ABD002C5E73 /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
+		0AC1248A23D6293F002C5E73 /* UsuariosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuariosTableViewController.swift; sourceTree = "<group>"; };
+		0AC1248C23D62AD7002C5E73 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		0AE437B023D1E815009FD5D5 /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE437B323D1E815009FD5D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AE437B523D1E815009FD5D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +58,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AC1248623D61A69002C5E73 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0AE437B723D1E815009FD5D5 /* ViewController.swift */,
+				0AE437C923D1FA72009FD5D5 /* EntrarViewController.swift */,
+				0AE437CD23D22D85009FD5D5 /* SnapsViewController.swift */,
+				0AE437CF23D22DA3009FD5D5 /* FotoViewController.swift */,
+				0AE437CB23D1FAAA009FD5D5 /* CadastroViewController.swift */,
+				0AC1248A23D6293F002C5E73 /* UsuariosTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0AC1248723D61A7E002C5E73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0AC1248823D61ABD002C5E73 /* Alerta.swift */,
+				0AC1248C23D62AD7002C5E73 /* Usuario.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0AE437A723D1E814009FD5D5 = {
 			isa = PBXGroup;
 			children = (
@@ -73,13 +101,10 @@
 		0AE437B223D1E815009FD5D5 /* Snapchat */ = {
 			isa = PBXGroup;
 			children = (
+				0AC1248723D61A7E002C5E73 /* Models */,
+				0AC1248623D61A69002C5E73 /* ViewControllers */,
 				0AE437B323D1E815009FD5D5 /* AppDelegate.swift */,
 				0AE437B523D1E815009FD5D5 /* SceneDelegate.swift */,
-				0AE437B723D1E815009FD5D5 /* ViewController.swift */,
-				0AE437C923D1FA72009FD5D5 /* EntrarViewController.swift */,
-				0AE437CD23D22D85009FD5D5 /* SnapsViewController.swift */,
-				0AE437CF23D22DA3009FD5D5 /* FotoViewController.swift */,
-				0AE437CB23D1FAAA009FD5D5 /* CadastroViewController.swift */,
 				0AE437B923D1E815009FD5D5 /* Main.storyboard */,
 				0AE437BC23D1E816009FD5D5 /* Assets.xcassets */,
 				0AE437BE23D1E816009FD5D5 /* LaunchScreen.storyboard */,
@@ -222,12 +247,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC1248923D61ABD002C5E73 /* Alerta.swift in Sources */,
+				0AC1248B23D62940002C5E73 /* UsuariosTableViewController.swift in Sources */,
 				0AE437CA23D1FA72009FD5D5 /* EntrarViewController.swift in Sources */,
 				0AE437D023D22DA3009FD5D5 /* FotoViewController.swift in Sources */,
 				0AE437B823D1E815009FD5D5 /* ViewController.swift in Sources */,
 				0AE437CE23D22D85009FD5D5 /* SnapsViewController.swift in Sources */,
 				0AE437B423D1E815009FD5D5 /* AppDelegate.swift in Sources */,
 				0AE437CC23D1FAAA009FD5D5 /* CadastroViewController.swift in Sources */,
+				0AC1248D23D62AD7002C5E73 /* Usuario.swift in Sources */,
 				0AE437B623D1E815009FD5D5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

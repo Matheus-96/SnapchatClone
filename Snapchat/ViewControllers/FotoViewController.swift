@@ -43,13 +43,17 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                         /* diferente do jamilton*/
                         imagemArquivo.downloadURL { (url, error) in
                             print((url?.absoluteString)!)
+                            self.performSegue(withIdentifier: "selecionarUsuarioSegue", sender: url)
+                            
                         }
                         
                         
+                                  
                         self.botaoProximo.isEnabled = true
                         self.botaoProximo.setTitle("Próximo", for: .normal)
                     } else {
-                       print("falha ao fazer o uploado do arquivo")
+                        let alerta = Alerta(titulo: "Upload falhou", mensagem: "Erro ao salvar o arquivo, tente novamente!")
+                        self.present(alerta.getAlerta(), animated: true, completion: nil)
                     }
                     
                 }
