@@ -8,7 +8,7 @@ target 'Snapchat' do
   pod "Firebase/Analytics"
   pod "Firebase/Auth"
   pod "Firebase/Database"
-  pod "Firebase/Storage"
+  pod 'Firebase/Storage ~>4.0'
 
   # Pods for Snapchat
 
