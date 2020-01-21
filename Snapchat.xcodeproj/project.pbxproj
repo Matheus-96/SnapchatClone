@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A77E82623D72C230093E030 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77E82523D72C230093E030 /* Snap.swift */; };
+		0A77E82823D7382F0093E030 /* DetalhesSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A77E82723D7382F0093E030 /* DetalhesSnapViewController.swift */; };
 		0AC1248923D61ABD002C5E73 /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1248823D61ABD002C5E73 /* Alerta.swift */; };
 		0AC1248B23D62940002C5E73 /* UsuariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1248A23D6293F002C5E73 /* UsuariosTableViewController.swift */; };
 		0AC1248D23D62AD7002C5E73 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1248C23D62AD7002C5E73 /* Usuario.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0A77E82523D72C230093E030 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
+		0A77E82723D7382F0093E030 /* DetalhesSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesSnapViewController.swift; sourceTree = "<group>"; };
 		0AC1248823D61ABD002C5E73 /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
 		0AC1248A23D6293F002C5E73 /* UsuariosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuariosTableViewController.swift; sourceTree = "<group>"; };
 		0AC1248C23D62AD7002C5E73 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				0AE437CF23D22DA3009FD5D5 /* FotoViewController.swift */,
 				0AE437CB23D1FAAA009FD5D5 /* CadastroViewController.swift */,
 				0AC1248A23D6293F002C5E73 /* UsuariosTableViewController.swift */,
+				0A77E82723D7382F0093E030 /* DetalhesSnapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				0AE437CE23D22D85009FD5D5 /* SnapsViewController.swift in Sources */,
 				0AE437B423D1E815009FD5D5 /* AppDelegate.swift in Sources */,
 				0AE437CC23D1FAAA009FD5D5 /* CadastroViewController.swift in Sources */,
+				0A77E82823D7382F0093E030 /* DetalhesSnapViewController.swift in Sources */,
 				0AC1248D23D62AD7002C5E73 /* Usuario.swift in Sources */,
 				0A77E82623D72C230093E030 /* Snap.swift in Sources */,
 				0AE437B623D1E815009FD5D5 /* SceneDelegate.swift in Sources */,

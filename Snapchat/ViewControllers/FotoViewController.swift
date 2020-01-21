@@ -87,5 +87,9 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         imagePicker.dismiss(animated: true, completion: nil)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
 }

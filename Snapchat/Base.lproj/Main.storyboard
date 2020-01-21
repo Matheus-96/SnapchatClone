@@ -315,11 +315,64 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="52v-0Z-c11" id="mbo-1X-y2V"/>
+                        <segue destination="PvV-Lp-ejV" kind="presentation" identifier="detalhesSnapSegue" id="sUd-gi-O47"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kir-sL-8P9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3986.9565217391309" y="84.375"/>
+        </scene>
+        <!--Detalhes Snap View Controller-->
+        <scene sceneID="FfF-nb-LdU">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="PvV-Lp-ejV" customClass="DetalhesSnapViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FaM-IL-5uA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2OX-jJ-usp">
+                                <rect key="frame" x="20" y="44" width="374" height="362"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="362" id="pZs-zm-MqH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpB-ep-brU" customClass="d">
+                                <rect key="frame" x="20" y="438" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bi-4l-KqK">
+                                <rect key="frame" x="20" y="862" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9bi-4l-KqK" firstAttribute="leading" secondItem="bcb-pC-r4P" secondAttribute="leading" constant="20" id="2WE-40-YxQ"/>
+                            <constraint firstItem="bcb-pC-r4P" firstAttribute="trailing" secondItem="jpB-ep-brU" secondAttribute="trailing" constant="20" id="3VG-fQ-N0Z"/>
+                            <constraint firstItem="jpB-ep-brU" firstAttribute="top" secondItem="2OX-jJ-usp" secondAttribute="bottom" constant="32" id="AwW-Ex-dYq"/>
+                            <constraint firstItem="bcb-pC-r4P" firstAttribute="trailing" secondItem="9bi-4l-KqK" secondAttribute="trailing" constant="20" id="HKG-tX-mBC"/>
+                            <constraint firstItem="bcb-pC-r4P" firstAttribute="trailing" secondItem="2OX-jJ-usp" secondAttribute="trailing" constant="20" id="Zqg-cg-j9o"/>
+                            <constraint firstItem="jpB-ep-brU" firstAttribute="leading" secondItem="bcb-pC-r4P" secondAttribute="leading" constant="20" id="fVt-i9-QKq"/>
+                            <constraint firstItem="2OX-jJ-usp" firstAttribute="leading" secondItem="bcb-pC-r4P" secondAttribute="leading" constant="20" id="kpH-ha-S96"/>
+                            <constraint firstItem="9bi-4l-KqK" firstAttribute="bottom" secondItem="bcb-pC-r4P" secondAttribute="bottom" id="pPG-fI-vey"/>
+                            <constraint firstItem="2OX-jJ-usp" firstAttribute="top" secondItem="bcb-pC-r4P" secondAttribute="top" id="tna-o8-YBy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bcb-pC-r4P"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cjj-uD-a0F"/>
+                    <connections>
+                        <outlet property="contador" destination="9bi-4l-KqK" id="BKM-k1-e2G"/>
+                        <outlet property="detalhes" destination="jpB-ep-brU" id="32t-ZH-VxJ"/>
+                        <outlet property="imagem" destination="2OX-jJ-usp" id="R69-uO-RiU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXX-RQ-cZ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3987" y="834"/>
         </scene>
         <!--Foto-->
         <scene sceneID="5MV-ng-tSg">
@@ -474,6 +527,6 @@
         <image name="padrao" width="500" height="446"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jqh-jg-EZD"/>
+        <segue reference="DhU-zA-e72"/>
     </inferredMetricsTieBreakers>
 </document>
