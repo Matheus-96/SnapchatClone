@@ -8,8 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
-class SnapsViewController: UIViewController {
+class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var snaps : [Snap] = []
+    
+    @IBOutlet weak var tableView : UITableView!
 
     @IBAction func sair(_ sender: Any) {
         
@@ -20,26 +25,56 @@ class SnapsViewController: UIViewController {
         } catch  {
             print("Erro ao deslogar usuário")
         }
-        
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let autenticacao = Auth.auth()
+        
+        if let idUsuarioLogado = autenticacao.currentUser?.uid {
+            let database = Database.database().reference()
+            let usuarios = database.child("usuarios")
+            let snaps = usuarios.child(idUsuarioLogado).child("snaps")
+            
+            //Cria ouvinte para Snaps
+            snaps.observe(DataEventType.childAdded) { (snapshot) in
+                
+                let dados = snapshot.value as? NSDictionary
+                
+                let snap = Snap()
+                snap.identificador = snapshot.key
+                snap.nome = dados?["nome"] as! String
+                snap.descricao = dados?["descricao"] as! String
+                snap.urlImagem = dados?["urlImagem"] as! String
+                snap.idImagem = dados?["idImagem"] as! String
+                
+                self.snaps.append(snap)
+                self.tableView.reloadData()
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let totalSnaps = snaps.count
+        if totalSnaps == 0 {
+            return 1
+        }
+        return totalSnaps
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let celula = tableView.dequeueReusableCell(withIdentifier: "celula", for: indexPath)
+        let totalSnaps = snaps.count
+        if totalSnaps == 0 {
+            celula.textLabel?.text = "Nenhum snap para voce 🤷‍♂️"
+        } else {
+            let snap = self.snaps[indexPath.row]
+            celula.textLabel?.text = snap.nome
+        }
+        return celula
+    }
+
 
 }

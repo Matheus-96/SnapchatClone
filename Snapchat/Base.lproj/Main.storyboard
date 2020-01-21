@@ -273,15 +273,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tela principal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNp-CX-pwe">
-                                <rect key="frame" x="186" y="357" width="101" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="52v-0Z-c11">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" id="igO-09-hdP">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="igO-09-hdP" id="iEV-HH-Jag">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JW9-4m-Lca" id="LwR-RP-vpv"/>
+                                    <outlet property="delegate" destination="JW9-4m-Lca" id="16N-2c-ju6"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="52v-0Z-c11" firstAttribute="leading" secondItem="RmM-qY-84Z" secondAttribute="leading" id="WPT-J0-JFS"/>
+                            <constraint firstItem="52v-0Z-c11" firstAttribute="bottom" secondItem="RmM-qY-84Z" secondAttribute="bottom" id="cUj-l0-TIp"/>
+                            <constraint firstItem="52v-0Z-c11" firstAttribute="top" secondItem="RmM-qY-84Z" secondAttribute="top" id="fvf-37-t1D"/>
+                            <constraint firstItem="52v-0Z-c11" firstAttribute="trailing" secondItem="RmM-qY-84Z" secondAttribute="trailing" id="qFI-He-V5X"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RmM-qY-84Z"/>
                     </view>
                     <navigationItem key="navigationItem" title="Snaps" id="kVt-Le-u7e">
@@ -296,6 +313,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="52v-0Z-c11" id="mbo-1X-y2V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kir-sL-8P9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,7 +387,7 @@
             </objects>
             <point key="canvasLocation" x="4828.985507246377" y="83.705357142857139"/>
         </scene>
-        <!--Usuarios Table View Controller-->
+        <!--Usuários-->
         <scene sceneID="J8C-NC-XO4">
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="sdo-CJ-dEg" customClass="UsuariosTableViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
@@ -406,7 +426,7 @@
                             <outlet property="delegate" destination="sdo-CJ-dEg" id="xrR-f7-eYy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="k5u-DK-4vZ"/>
+                    <navigationItem key="navigationItem" title="Usuários" id="ZLh-p2-hpz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tjd-eB-d9w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

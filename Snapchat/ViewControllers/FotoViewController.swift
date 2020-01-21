@@ -46,8 +46,6 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                             self.performSegue(withIdentifier: "selecionarUsuarioSegue", sender: url)
                             
                         }
-                        
-                        
                                   
                         self.botaoProximo.isEnabled = true
                         self.botaoProximo.setTitle("Próximo", for: .normal)
@@ -55,16 +53,19 @@ class FotoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                         let alerta = Alerta(titulo: "Upload falhou", mensagem: "Erro ao salvar o arquivo, tente novamente!")
                         self.present(alerta.getAlerta(), animated: true, completion: nil)
                     }
-                    
                 }
             }
-            
         }
-        
     }
     
-    
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue .identifier == "selecionarUsuarioSegue" {
+            let usuarioViewController = segue.destination as! UsuariosTableViewController
+            usuarioViewController.descricao = self.descricao.text!
+            usuarioViewController.urlImagem = "\(sender!)"
+            usuarioViewController.idImagem = self.idImagem
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
